@@ -78,7 +78,7 @@ CTEST2(plat, test_slow_v_fast_accel) {
 
 }
 CTEST2(plat, test_slow_down) {
-    ASSERT_EQUAL(1, ((int)data->plat_high_a.xvel > (int)data->plat_slower.xpos));  
+    ASSERT_EQUAL(1, ((int)data->plat_high_a.xvel > (int)data->plat_slower.xvel));  
 
     ASSERT_EQUAL(20, (int)data->plat_slower.mass); //unchanged
     ASSERT_EQUAL(72, (int)data->plat_slower.xpos);
@@ -116,8 +116,8 @@ CTEST2(hm_motion, test_x) { //left and right motion
 }
 
 CTEST2(hm_motion, test_grav) { 
-    ASSERT_EQUAL(50, (int)data->hm_move.mass); //unchanged
-    ASSERT_EQUAL((int)data->hm.xvel - ((int)data->grav * 3), (int)data->hm_move.xvel);
+    ASSERT_EQUAL(20, (int)data->hm_move.mass); //unchanged
+    ASSERT_EQUAL((int)data->hm.yvel - ((int)data->grav * 3), (int)data->hm_move.yvel);
 }
 
 CTEST2(hm_motion, test_crash) { 
